@@ -1,0 +1,31 @@
+```mermaid
+sequenceDiagram
+    participant Attacker
+    participant Bots
+    participant WebServer
+    participant Firewall
+
+    Attacker->>Bots: Command to attack
+    Bots->>WebServer: Send multiple requests
+    WebServer->>Firewall: Alert of high traffic
+    Firewall->>WebServer: Analyze traffic
+    Firewall->>WebServer: Block suspicious IPs
+    Bots->>WebServer: Continue sending requests
+    WebServer->>Bots: Deny service to legitimate users
+
+### Step 4: Documentation
+Below the diagram, describe each step in detail:
+
+```markdown
+## DDoS Attack Sequence Description
+
+1. **Attacker Commands Bots**: The attacker sends a command to the compromised systems (bots) to initiate the flood of requests.
+2. **Bots Send Requests**: The bots send multiple requests to the targeted web server, overwhelming it with traffic.
+3. **Web Server Alerts Firewall**: The web server detects the high volume of traffic and alerts the firewall.
+4. **Firewall Analyzes Traffic**: The firewall analyzes the incoming traffic to identify patterns indicative of a DDoS attack.
+5. **Firewall Blocks IPs**: Based on the analysis, the firewall takes action to block suspicious IP addresses to mitigate the attack.
+6. **Bots Continue Sending Requests**: Despite the firewall's efforts, the bots continue to send requests, leading to service denial.
+7. **Web Server Denies Service**: As a result of the overwhelming requests, legitimate users are denied access to the web server.
+
+### Conclusion
+This sequence diagram illustrates the stages of a DDoS attack and the defensive responses from the network's firewall, highlighting the continuous struggle between attackers and defense mechanisms.
